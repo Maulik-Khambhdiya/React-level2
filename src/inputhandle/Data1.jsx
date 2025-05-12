@@ -50,11 +50,12 @@ const Data1 = () => {
             <br />
             <input type="text" name="" id="" value={surname} onChange={(e) => setSurname(e.target.value)} />
             <br /><br />
-            <button type="submit" onClick={handleData}>Submit</button>
-
+            <button type="submit"  onClick={handleData}>Submit</button>
+<br /><br />
 
             <table border={1}>
                 <tr>
+                    <th>No</th>
                     <th>Name</th>
                     <th>Surame</th>
                     <th>Remove</th>
@@ -64,6 +65,7 @@ const Data1 = () => {
                 {
                     list.map((i, index) => (
                         <tr>
+                            <td>{index}</td>
                             <td>{i.name}</td>
                             <td>{i.surname}</td>
                             <td><button onClick={() => dataDelete(index)}>Delete</button></td>
