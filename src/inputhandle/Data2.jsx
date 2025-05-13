@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-const Data1 = () => {
-
+const Data2 = () => {
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
     const [list, setList] = useState([])
@@ -12,70 +11,69 @@ const Data1 = () => {
         const obj = { name, surname }
 
         if (editId != null) {
-            let copyData=[...list]
+            let copyData = [...list]
             copyData[editId]=obj
             setList(copyData)
             seteditId(null)
         }
-
         else {
             setList([...list, obj])
         }
 
         setName('')
         setSurname('')
-
     }
 
-
-    const dataDelete = (index) => {
+    const deleteData = (index) => {
         let copyData = [...list]
         copyData.splice(index, 1)
         setList(copyData)
-
     }
 
     const editData = (i, index) => {
-       
+
         setName(i.name)
         setSurname(i.surname)
         seteditId(index)
-
     }
+
     return (
         <>
 
+
             <input type="text" name="" id="" value={name} onChange={(e) => setName(e.target.value)} />
-            <br />
-            <br />
+            <br /><br />
             <input type="text" name="" id="" value={surname} onChange={(e) => setSurname(e.target.value)} />
             <br /><br />
-            <button type="submit"  onClick={handleData}>Submit</button>
-<br /><br />
+            <button type="submit" onClick={handleData}>Submit</button>
+            <br /><br />
+
 
             <table border={1}>
                 <tr>
                     <th>No</th>
                     <th>Name</th>
-                    <th>Surame</th>
-                    <th>Remove</th>
-                    <th>Change</th>
+                    <th>Surname</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
 
                 {
                     list.map((i, index) => (
                         <tr>
-                            <td>{index}</td>
+                            <td>{index + 1}</td>
                             <td>{i.name}</td>
                             <td>{i.surname}</td>
-                            <td><button onClick={() => dataDelete(index)}>Delete</button></td>
+                            <td><button onClick={() => deleteData(index)}>Delete</button></td>
                             <td><button onClick={() => editData(i, index)}>Edit</button></td>
                         </tr>
                     ))
                 }
             </table>
+
+
         </>
     )
 }
 
-export default Data1
+export default Data2
