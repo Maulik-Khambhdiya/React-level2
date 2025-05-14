@@ -7,16 +7,24 @@ import Data1 from './inputhandle/Data1';
 import Data2 from './inputhandle/Data2';
 import Task from './Formik/Task';
 import Result from './inputhandle/Result';
+import Formiktag from './Formik/Formiktag';
+import Resultformik from './Formik/Resultformik';
 
 function App() {
 
   return (
     <>
     {/* <Task></Task> */}
+    {/* <Formiktag></Formiktag> */}
+    <Resultformik></Resultformik>
+
+
     {/* <Data></Data> */}
     {/* <Data1></Data1> */}
     {/* <Data2></Data2> */}
-    <Result></Result>
+    {/* <Result></Result> */}
+
+
     {/* <Ricky></Ricky> */}
     {/* <Tictactoe></Tictactoe> */}
     </>
