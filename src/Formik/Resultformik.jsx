@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 
 const Resultformik = () => {
 
+    const [editId,seteditId]=useState(null)
+
     const [ini, setIni] = useState({
         name: '',
         sub1: '',
@@ -10,10 +12,22 @@ const Resultformik = () => {
         sub3: ''
     })
 
+
     const [list, setList] = useState([])
 
     const handleData = (values, { resetForm }) => {
-        setList([...list, values])
+
+        if(editId != null)
+        {
+            let copyData=[...list]
+            copyData[editId]=values
+            setList(copyData)
+            seteditId(null)
+        }
+        else{
+            setList([...list, values])
+        }
+        
         resetForm()
 
     }
@@ -26,6 +40,7 @@ const Resultformik = () => {
 
     const editData = (i, index) => {
         setIni(i)
+        seteditId(index)
     }
 
     return (
@@ -75,7 +90,7 @@ const Resultformik = () => {
                             <td>{parseInt(i.sub1) + parseInt(i.sub2) + parseInt(i.sub3)}</td>
                             <td>{Math.max(parseInt(i.sub1), parseInt(i.sub2), parseInt(i.sub3))}</td>
                             <td>{Math.min(parseInt(i.sub1), parseInt(i.sub2), parseInt(i.sub3))}</td>
-                            <td>{parseInt(i.sub1) + parseInt(i.sub2) + parseInt(i.sub3) / 3} %</td>
+                            <td>{(parseInt(i.sub1) + parseInt(i.sub2) + parseInt(i.sub3))/ 3} %</td>
                             <td><button onClick={() => deleteData(index)}>Delete</button></td>
                             <td><button onClick={() => editData(i, index)}>Edit</button></td>
                         </tr>

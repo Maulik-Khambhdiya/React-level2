@@ -16,7 +16,7 @@ function App() {
     <>
     {/* <Task></Task> */}
     {/* <Formiktag></Formiktag> */}
-    <Resultformik></Resultformik>
+    {/* <Resultformik></Resultformik> */}
 
 
     {/* <Data></Data> */}
@@ -26,7 +26,7 @@ function App() {
 
 
     {/* <Ricky></Ricky> */}
-    {/* <Tictactoe></Tictactoe> */}
+    <Tictactoe></Tictactoe>
     </>
   );
 }
