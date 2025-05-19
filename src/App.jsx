@@ -9,6 +9,9 @@ import Task from './Formik/Task';
 import Result from './inputhandle/Result';
 import Formiktag from './Formik/Formiktag';
 import Resultformik from './Formik/Resultformik';
+import Api from './API call/Api';
+import Api1 from './API call/Api1';
+import Rickandmorty  from './API call/Rickandmorty';
 
 function App() {
 
@@ -26,7 +29,11 @@ function App() {
 
 
     {/* <Ricky></Ricky> */}
-    <Tictactoe></Tictactoe>
+    {/* <Tictactoe></Tictactoe> */}
+
+    {/* <Api></Api> */}
+    {/* <Api1></Api1> */}
+    <Rickandmorty></Rickandmorty>
     </>
   );
 }

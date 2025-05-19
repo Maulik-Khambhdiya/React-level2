@@ -13,6 +13,7 @@ const Result = () => {
 
         const obj = { name, sub1: parseInt(sub1), sub2: parseInt(sub2), sub3: parseInt(sub3) }
 
+        
 
         if (editId != null) {
             let copyData = [...list]

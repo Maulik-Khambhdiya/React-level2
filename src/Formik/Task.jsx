@@ -1,5 +1,7 @@
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
+import * as Yup from 'yup';
+
 
 const Task = () => {
 
@@ -11,6 +13,15 @@ const Task = () => {
             name: "",
             surname: ""
         },
+
+        validationSchema: Yup.object({
+            name: Yup.string()
+            .required("Name is required"),
+            surname: Yup.string()
+            .required("Surname is required"),
+
+        }),
+
         onSubmit: (values) => {
 
             if (editId != null) {
@@ -46,8 +57,15 @@ const Task = () => {
         <>
 
             <form action="" onSubmit={formik.handleSubmit}>
-                <input type="text" name="name" value={formik.values.name} id="" onChange={formik.handleChange} /><br /><br />
+                <input type="text" name="name" value={formik.values.name} id="" onChange={formik.handleChange} />
+                {formik.touched.name && formik.errors.name ?(
+                 <p>{formik.errors.name}</p>
+                ):null}
+                <br /><br />
                 <input type="text" name="surname" value={formik.values.surname} id="" onChange={formik.handleChange} /><br /><br />
+                {formik.touched.surname && formik.errors.surname ?(
+                 <p>{formik.errors.surname}</p>
+                ):null}
                 <input type="submit" />
             </form>
 

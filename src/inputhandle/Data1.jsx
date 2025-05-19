@@ -12,8 +12,8 @@ const Data1 = () => {
         const obj = { name, surname }
 
         if (editId != null) {
-            let copyData=[...list]
-            copyData[editId]=obj
+            let copyData = [...list]
+            copyData[editId] = obj
             setList(copyData)
             seteditId(null)
         }
@@ -36,7 +36,7 @@ const Data1 = () => {
     }
 
     const editData = (i, index) => {
-       
+
         setName(i.name)
         setSurname(i.surname)
         seteditId(index)
@@ -50,8 +50,8 @@ const Data1 = () => {
             <br />
             <input type="text" name="" id="" value={surname} onChange={(e) => setSurname(e.target.value)} />
             <br /><br />
-            <button type="submit"  onClick={handleData}>Submit</button>
-<br /><br />
+            <button type="submit" onClick={handleData}>Submit</button>
+            <br /><br />
 
             <table border={1}>
                 <tr>

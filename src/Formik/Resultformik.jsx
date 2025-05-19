@@ -1,9 +1,10 @@
-import { Field, Form, Formik } from 'formik'
+import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React, { useState } from 'react'
+import * as Yup from 'yup';
 
 const Resultformik = () => {
 
-    const [editId,seteditId]=useState(null)
+    const [editId, seteditId] = useState(null)
 
     const [ini, setIni] = useState({
         name: '',
@@ -17,17 +18,24 @@ const Resultformik = () => {
 
     const handleData = (values, { resetForm }) => {
 
-        if(editId != null)
-        {
-            let copyData=[...list]
-            copyData[editId]=values
+        if (editId != null) {
+            
+            let copyData = [...list]
+            copyData[editId] = values
             setList(copyData)
             seteditId(null)
+            setIni({
+                name: '',
+                sub1: '',
+                sub2: '',
+                sub3: ''
+            });
         }
-        else{
+
+        else {
             setList([...list, values])
         }
-        
+
         resetForm()
 
     }
@@ -46,17 +54,37 @@ const Resultformik = () => {
     return (
         <>
 
-
             <Formik
                 enableReinitialize
                 initialValues={ini}
+                validationSchema={Yup.object({
+                    name: Yup.string()
+                    .required('Name Is Required'),
+                    sub1: Yup.number()
+                    .required('Sub1 Is Required'),
+                    sub2: Yup.number()
+                    .required('Sub2 Is Required'),
+                    sub3: Yup.number()
+                    .required('Sub3 Is Required'),
+
+                })}
                 onSubmit={handleData}
             >
                 <Form>
-                    <Field name="name"></Field><br /><br />
-                    <Field name="sub1"></Field><br /><br />
-                    <Field name="sub2"></Field><br /><br />
-                    <Field name="sub3"></Field><br /><br />
+                    <Field name="name"></Field><br />
+                     <ErrorMessage name="name" />
+                    <br />
+ 
+                    <Field name="sub1"></Field><br />
+                    <ErrorMessage name="sub1" />
+                    <br />
+                     
+                    <Field name="sub2"></Field><br />
+                    <ErrorMessage name="sub2" />
+                    <br />
+                    <Field name="sub3"></Field><br />
+                    <ErrorMessage name="sub3" />
+                    <br />
 
                     <button type='submit'>Submit</button><br /><br />
 
@@ -82,7 +110,7 @@ const Resultformik = () => {
                 {
                     list.map((i, index) => (
                         <tr>
-                            <td>{index}</td>
+                            <td>{index + 1}</td>
                             <td>{i.name}</td>
                             <td>{parseInt(i.sub1)}</td>
                             <td>{parseInt(i.sub2)}</td>
@@ -90,7 +118,7 @@ const Resultformik = () => {
                             <td>{parseInt(i.sub1) + parseInt(i.sub2) + parseInt(i.sub3)}</td>
                             <td>{Math.max(parseInt(i.sub1), parseInt(i.sub2), parseInt(i.sub3))}</td>
                             <td>{Math.min(parseInt(i.sub1), parseInt(i.sub2), parseInt(i.sub3))}</td>
-                            <td>{(parseInt(i.sub1) + parseInt(i.sub2) + parseInt(i.sub3))/ 3} %</td>
+                            <td>{(parseInt(i.sub1) + parseInt(i.sub2) + parseInt(i.sub3)) / 3} %</td>
                             <td><button onClick={() => deleteData(index)}>Delete</button></td>
                             <td><button onClick={() => editData(i, index)}>Edit</button></td>
                         </tr>

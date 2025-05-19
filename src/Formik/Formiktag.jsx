@@ -1,5 +1,7 @@
-import { Field, Form, Formik } from 'formik'
+import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React, { useState } from 'react'
+import * as Yup from 'yup';
+
 
 const Formiktag = () => {
 
@@ -7,6 +9,7 @@ const Formiktag = () => {
 
   const [ini, setIni] = useState({
     name: '',
+
     age: ""
   })
 
@@ -23,6 +26,10 @@ const Formiktag = () => {
       copyData[editId]=values
       setList(copyData)
       seteditId(null)
+      setIni({
+        name: '',
+        age: ""
+      })
       
     }
     else{
@@ -30,6 +37,7 @@ const Formiktag = () => {
     }
     
     resetForm()
+    
   }
 
   const deletData = (index) => {
@@ -48,10 +56,26 @@ const Formiktag = () => {
       <Formik
         enableReinitialize
         initialValues={ini}
+
+        validationSchema={Yup.object({
+          name: Yup.string()
+          .required("Name is required"),
+          age: Yup.string()
+          .required("Age is required"),
+        })}
         onSubmit={handleData}>
         <Form>
-          <Field name="name"></Field><br /><br />
-          <Field name="age"></Field><br /><br />
+          <Field name="name"></Field>
+          
+          <br />
+          <ErrorMessage name="name" />
+          <br />
+          <Field name="age"></Field>
+          
+          <br />
+           <ErrorMessage name="age" />
+          <br />
+         
           <button type='submit'>Submit</button><br /><br />
         </Form>
       </Formik>
