@@ -11,7 +11,10 @@ import Formiktag from './Formik/Formiktag';
 import Resultformik from './Formik/Resultformik';
 import Api from './API call/Api';
 import Api1 from './API call/Api1';
+import Api2 from './API call/Api2';
 import Rickandmorty  from './API call/Rickandmorty';
+import Crudapi from './Crud Api/Crudapi';
+import Crudapi2 from './Crud Api/Crudapi2';
 
 function App() {
 
@@ -33,7 +36,12 @@ function App() {
 
     {/* <Api></Api> */}
     {/* <Api1></Api1> */}
-    <Rickandmorty></Rickandmorty>
+    {/* <Api2></Api2> */}
+    {/* <Rickandmorty></Rickandmorty> */}
+
+
+    {/* <Crudapi></Crudapi> */}
+    <Crudapi2></Crudapi2>
     </>
   );
 }
