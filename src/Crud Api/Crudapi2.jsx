@@ -27,7 +27,7 @@ const Crudapi2 = () => {
         .then((res)=>{
             console.log(res.data.Data);
             
-            setList(res.data.Data)
+            setList(res..data.Data)
         })
         .catch((error)=>{
             console.log(error);
