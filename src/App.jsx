@@ -40,14 +40,14 @@ function App() {
     {/* <Api></Api> */}
     {/* <Api1></Api1> */}
     {/* <Api2></Api2> */}
-    {/* <Rickandmorty></Rickandmorty> */}
+    <Rickandmorty></Rickandmorty>
 
 
     {/* <Crudapi></Crudapi> */}
     {/* <Crudapi2></Crudapi2> */}
     {/* <Crudapi3></Crudapi3> */}
     {/* <Crudapi4></Crudapi4> */}
-    <Crudapi5></Crudapi5>
+    {/* <Crudapi5></Crudapi5> */}
     </>
   );
 }
