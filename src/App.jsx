@@ -15,6 +15,9 @@ import Api2 from './API call/Api2';
 import Rickandmorty  from './API call/Rickandmorty';
 import Crudapi from './Crud Api/Crudapi';
 import Crudapi2 from './Crud Api/Crudapi2';
+import Crudapi3 from './Crud Api/Crudapi3';
+import Crudapi4 from './Crud Api/Crudapi4';
+import Crudapi5 from './Crud Api/Crudapi5';
 
 function App() {
 
@@ -41,7 +44,10 @@ function App() {
 
 
     {/* <Crudapi></Crudapi> */}
-    <Crudapi2></Crudapi2>
+    {/* <Crudapi2></Crudapi2> */}
+    {/* <Crudapi3></Crudapi3> */}
+    {/* <Crudapi4></Crudapi4> */}
+    <Crudapi5></Crudapi5>
     </>
   );
 }
