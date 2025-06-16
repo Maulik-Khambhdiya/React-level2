@@ -20,11 +20,17 @@ import Crudapi4 from './Crud Api/Crudapi4';
 import Crudapi5 from './Crud Api/Crudapi5';
 import Crudapi6 from './Crud Api/Crudapi6';
 import ImageCrud from './Imagecrud/ImageCrud';
+import UseRef1 from './Hooks/UseRef1';
+import UseMemo from './Hooks/UseMemo';
+import UseCall from './Hooks/UseCall';
+import UseContext from './Hooks/Hookpages/UseContext';
+
 
 function App() {
 
   return (
     <>
+
     {/* <Task></Task> */}
     {/* <Formiktag></Formiktag> */}
     {/* <Resultformik></Resultformik> */}
@@ -39,12 +45,14 @@ function App() {
     {/* <Ricky></Ricky> */}
     {/* <Tictactoe></Tictactoe> */}
 
+
     {/* <Api></Api> */}
     {/* <Api1></Api1> */}
     {/* <Api2></Api2> */}
     {/* <Rickandmorty></Rickandmorty> */}
 
-    <ImageCrud></ImageCrud>
+
+    {/* <ImageCrud></ImageCrud> */}
 
 
     {/* <Crudapi></Crudapi> */}
@@ -53,6 +61,12 @@ function App() {
     {/* <Crudapi4></Crudapi4> */}
     {/* <Crudapi5></Crudapi5> */}
     {/* <Crudapi6></Crudapi6> */}
+
+
+    {/* <UseRef1></UseRef1> */}
+    {/* <UseMemo></UseMemo> */}
+    {/* <UseCall></UseCall> */}
+    <UseContext></UseContext>
     </>
   );
 }
