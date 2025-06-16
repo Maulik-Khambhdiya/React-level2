@@ -19,6 +19,7 @@ import Crudapi3 from './Crud Api/Crudapi3';
 import Crudapi4 from './Crud Api/Crudapi4';
 import Crudapi5 from './Crud Api/Crudapi5';
 import Crudapi6 from './Crud Api/Crudapi6';
+import ImageCrud from './Imagecrud/ImageCrud';
 
 function App() {
 
@@ -43,13 +44,15 @@ function App() {
     {/* <Api2></Api2> */}
     {/* <Rickandmorty></Rickandmorty> */}
 
+    <ImageCrud></ImageCrud>
+
 
     {/* <Crudapi></Crudapi> */}
     {/* <Crudapi2></Crudapi2> */}
     {/* <Crudapi3></Crudapi3> */}
     {/* <Crudapi4></Crudapi4> */}
     {/* <Crudapi5></Crudapi5> */}
-    <Crudapi6></Crudapi6>
+    {/* <Crudapi6></Crudapi6> */}
     </>
   );
 }

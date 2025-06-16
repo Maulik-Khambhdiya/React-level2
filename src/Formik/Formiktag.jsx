@@ -56,7 +56,6 @@ const Formiktag = () => {
       <Formik
         enableReinitialize
         initialValues={ini}
-
         validationSchema={Yup.object({
           name: Yup.string()
           .required("Name is required"),
